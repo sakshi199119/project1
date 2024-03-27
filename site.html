@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta data-name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--===== Boxicons CSS =====-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Image Gallery with Search Box</title>
+    <style>
+    
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    position: relative;
+    min-height: 100vh;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+.container .search-box{
+    position: relative;
+    height: 42px;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+.search-box input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: #323334;
+    padding: 0 15px 0 45px;
+    color: #fff;
+    border-radius: 6px;
+}
+.search-box i{
+    position: absolute;
+    z-index: 2;
+    color: #999;
+    top: 50%;
+    left: 15px;
+    font-size: 20px;
+    transform: translateY(-50%);
+}
+.container .images .image-box{
+    position: relative;
+    height: 300px;
+    width: 230px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.images{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.images .image-box{
+    margin: 8px;
+}
+.images .image-box img{
+    height: 90%;
+    width: 100%;
+    border-radius: 6px;
+    transition: transform 0.2s linear;
+}
+.image-box:hover img{
+    transform: scale(1.05);
+}
+.image-box h6{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+h6 {
+    display: none;
+} 
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="search-box">
+            <i class="bx bx-search"></i>
+            <input type="text" placeholder="Search here...">
+        </div>
+
+        <div class="images">
+            <div class="image-box" data-name="joya">
+                <a href="https://www.facebook.com/joya.ekka.3"><img src="images/a29.jpg"></a>
+                <h6>joya</h6>
+            </div>
+            <div class="image-box" data-name="nitesh">
+                <a href="https://www.facebook.com/nitesh.kachhap.1422"><img src="images/a.jpg" alt=""></a>
+                <h6>nitesh</h6>
+            </div>
+            <div class="image-box" data-name="dinesh">
+                <a href="https://www.facebook.com/dinesh.deva.37853"><img src="images/b.jpg" alt=""></a>
+                <h6>dinesh</h6>
+            </div>
+            <div class="image-box" data-name="varsha">
+                <a href="https://www.facebook.com/varsha.rittu.5"><img src="images/c.jpg" alt=""></a>
+                <h6>varsha</h6>
+            </div>
+            <div class="image-box" data-name="chandani">
+                <a href="https://www.facebook.com/chandnipriya.baraik.3"><img src="images/d.jpg" alt=""></a>
+                <h6>chandani</h6>
+            </div>
+            <div class="image-box" data-name="vivek">
+                <a href="https://www.facebook.com/viveknayak0008"><img src="images/e.jpg" alt=""></a>
+                <h6>vivek</h6>
+            </div>
+            <div class="image-box" data-name="lalkishor">
+                <a href=""><img src="images/la.jpg" alt=""></a>
+                <h6>lalkishor</h6>
+            </div>
+            <div class="image-box" data-name="sanjay">
+                <a href="https://www.facebook.com/profile.php?id=100073356642183"><img src="images/f.jpg" alt=""></a>
+                <h6>sanjay</h6>
+            </div>
+            <div class="image-box" data-name="kailash">
+                <a href="https://www.facebook.com/kailash.jackson.7"><img src="images/g.jpg" alt=""></a>
+                <h6>kailash</h6>
+            </div>
+            <div class="image-box" data-name="nausad">
+                <a href="https://www.facebook.com/nkmui"><img src="images/h.jpg" alt=""></a>
+                <h6>nausad</h6>
+            </div>
+            <div class="image-box" data-name="vijay">
+               <a href="https://www.facebook.com/vijay.prabhakar.9210"><img src="images/i.jpg" alt=""></a>
+                <h6>vijay</h6>
+            </div>
+            <div class="image-box" data-name="monu">
+                <a href="https://www.facebook.com/monu.raj.796774"><img src="images/j.jpg" alt=""></a>
+                <h6>monu</h6>
+            </div>
+            <div class="image-box" data-name="kiran">
+               <a href="https://www.facebook.com/kiran.baraik.1004"><img src="images/k.jpg" alt=""></a>
+                <h6>kiran</h6>
+            </div>
+            <div class="image-box" data-name="raju">
+                <a href="https://www.facebook.com/raaju.tirkey"><img src="images/l.jpg" alt=""></a>
+                <h6>raju</h6>
+            </div>
+            <div class="image-box" data-name="prakash">
+                <a href="https://www.facebook.com/profile.php?id=100013228412713"><img src="images/m.jpg" alt=""></a>
+                <h6>prakash</h6>
+            </div>
+            <div class="image-box" data-name="jageshwar">
+                <a href="https://www.facebook.com/jageshwarkumar.j.k"><img src="images/n.jpg" alt=""></a>
+                <h6>jageshwar</h6>
+            </div>
+            <div class="image-box" data-name="adhir">
+               <a href="https://www.facebook.com/adhir.raaj"><img src="images/o.jpg" alt=""></a>
+                <h6>adhir</h6>
+            </div>
+            <div class="image-box" data-name="rajiv">
+                <a href="https://www.facebook.com/rajiv.sinha.94043"><img src="images/p.jpg" alt=""></a>
+                <h6>rajiv</h6>
+            </div>
+            <div class="image-box" data-name="jagdish">
+                <a href="https://www.facebook.com/jagdish.raj.1297"><img src="images/q.jpg" alt=""></a>
+                <h6>jagdish</h6>
+            </div>
+            <div class="image-box" data-name="tara">
+                <a href="https://www.facebook.com/tara.hindowala.3"><img src="images/r.jpg" alt=""></a>
+                <h6>tara</h6>
+            </div>
+            <div class="image-box" data-name="phoolchand">
+                <a href="https://www.facebook.com/prasunraaj"><img src="images/s.jpg" alt=""></a>
+                <h6>phoolchand</h6>
+            </div>
+            <div class="image-box" data-name="sanjay">
+                <a href="https://www.facebook.com/sanjaykumar.sahu2"><img src="images/t.jpg" alt=""></a>
+                <h6>sanjay</h6>
+            </div>
+            <div class="image-box" data-name="raj">
+                <a href="https://www.facebook.com/profile.php?id=100043744026819"><img src="images/u.jpg" alt=""></a>
+                <h6>raj</h6>
+            </div>
+            <div class="image-box" data-name="haider">
+                <a href="https://www.facebook.com/haidar.hd.video"><img src="images/v.jpg" alt=""></a>
+                <h6>haider</h6>
+            </div>
+            <div class="image-box" data-name="sudhir">
+                <a href="https://www.facebook.com/profile.php?id=100005647322821"><img src="images/w.jpg" alt=""></a>
+                <h6>sudhir</h6>
+            </div>
+            <div class="image-box" data-name="kajal">
+                <a href="https://www.facebook.com/kajalkumar.rajak"><img src="images/x.jpg" alt=""></a>
+                <h6>kajal</h6>
+            </div>
+            <div class="image-box" data-name="ranjit">
+                <a href="https://www.facebook.com/ranjit.ranjan3"><img src="images/y.jpg" alt=""></a>
+                <h6>ranjit</h6>
+            </div>
+            <div class="image-box" data-name="vishal">
+                <a href="https://www.facebook.com/search/top/?q=vishal%20tirkey"><img src="images/z.jpg" alt=""></a>
+                <h6>vishal</h6>
+            </div>
+            <div class="image-box" data-name="jaykant">
+                <a href="https://www.facebook.com/jaykant.indwar"><img src="images/a1.jpg" alt=""></a>
+                <h6>jaykant</h6>
+            </div>
+            <div class="image-box" data-name="shivani">
+               <a href="https://www.facebook.com/shivani.das.39501"><img src="images/a2.jpg"></a>
+               <h6>shivani</h6>
+            </div>
+            <div class="image-box" data-name="anima">
+               <a href="https://www.facebook.com/anima.kujur.12"><img src="images/a3.jpg"></a>
+               <h6>anima</h6>
+            </div   >
+            <div class="image-box" data-name="pankaj">
+               <a href="https://www.facebook.com/supriyo.pankaj"><img src="images/a4.jpg"></a>
+               <h6>pankaj</h6>
+            </div>
+            <div class="image-box" data-name="rajesh">
+               <a href="https://www.facebook.com/profile.php?id=100013229191869"><img src="images/a5.jpg"></a>
+               <h6>rajesh</h6>
+            </div>
+            <div class="image-box" data-name="raj">
+               <a href="https://www.facebook.com/profile.php?id=100020370774948"><img src="images/a6.jpg"></a>
+               <h6>raj</h6>
+            </div>
+            <div class="image-box" data-name="pankaj">
+               <a href="https://www.facebook.com/pankaj.oraon.14"><img src="images/a7.jpg"></a>
+               <h6>pankaj</h6>
+            </div>
+            <div class="image-box" data-name="amit">
+               <a href="https://www.facebook.com/profile.php?id=100008332065342&sk=photos"><img src="images/a8.jpg"></a>
+               <h6>amit</h6>
+            </div>
+            <div class="image-box" data-name="manoj">
+               <a href="https://www.facebook.com/manoj.shahri"><img src="images/a9.jpg"></a>
+               <h6>manoj</h6>
+            </div>
+            <div class="image-box" data-name="kavi">
+               <a href="https://www.facebook.com/kavikishan.kavikishan.94"><img src="images/a10.jpg"></a>
+               <h6>kavi</h6>
+            </div>
+            <div class="image-box" data-name="mantu">
+               <a href="https://www.facebook.com/profile.php?id=100005940615398"><img src="images/a11.jpg"></a>
+               <h6>mantu</h6>
+            </div>
+            <div class="image-box" data-name="ashish">
+               <a href="https://www.facebook.com/ashish.tigga.96930/photos"><img src="images/a12.jpg"></a>
+               <h6>ashish</h6>
+            </div>
+            <div class="image-box" data-name="kabita">
+               <a href="https://www.facebook.com/kabita.riyu"><img src="images/a13.jpg"></a>
+               <h6>kabita</h6>
+            </div>
+            <div class="image-box" data-name="satya">
+               <a href="https://www.facebook.com/profile.php?id=100072289787750"><img src="images/a14.jpg"></a>
+               <h6>satya</h6>
+            </div>
+            <div class="image-box" data-name="rakesh">
+               <a href="https://www.facebook.com/profile.php?id=100007323872600"><img src="images/a15.jpg"></a>
+               <h6>rakesh</h6>
+            </div>
+            <div class="image-box" data-name="bipin">
+               <a href="https://www.facebook.com/bipin.zate"><img src="images/a16.jpg"></a>
+               <h6>bipin</h6>
+            </div>
+            <div class="image-box" data-name="adhir">
+               <a href="https://www.facebook.com/adhir.raaj"><img src="images/a17.jpg"></a>
+               <h6>adhir</h6>
+            </div>
+            <div class="image-box" data-name="ashish">
+               <a href="https://www.facebook.com/ashish.anthony.10"><img src="images/a18.jpg"></a>
+               <h6>ashish</h6>
+            </div>
+            <div class="image-box" data-name="keshaw">
+               <a href="https://www.facebook.com/keshaw.keshariya"><img src="images/a19.jpg"></a>
+               <h6>keshaw</h6>
+            </div>
+            <div class="image-box" data-name="mangal">
+               <a href="https://www.facebook.com/profile.php?id=100018168699560"><img src="images/a20.jpg"></a>
+               <h6>mangal</h6>
+            </div>
+            <div class="image-box" data-name="chitranjan">
+               <a href="https://www.facebook.com/chitranjan.goswami1"><img src="images/a21.jpg"></a>
+               <h6>chitranjan</h6>
+            </div>
+            <div class="image-box" data-name="monika">
+               <a href="https://www.facebook.com/monika.mundu"><img src="images/a22.jpg"></a>
+               <h6>monika</h6>
+            </div>
+            <div class="image-box" data-name="jyoti">
+               <a href="https://www.facebook.com/jyoti.sahu.35728466"><img src="images/a23.jpg"></a>
+               <h6>jyoti</h6>
+            </div>
+            <div class="image-box" data-name="manita">
+               <a href="https://www.facebook.com/manita.raaj.9"><img src="images/a24.jpg"></a>
+               <h6>manita</h6>
+            </div>
+            <div class="image-box" data-name="bubai">
+               <a href="https://www.facebook.com/bubai.roy.906"><img src="images/a25.jpg"></a>
+               <h6>bubai</h6>
+            </div>
+            <div class="image-box" data-name="parween">
+               <a href="https://www.facebook.com/profile.php?id=100044256472012"><img src="images/a26.jpg"></a>
+               <h6>parween</h6>
+            </div>
+            <div class="image-box" data-name="sumit">
+               <a href="https://www.facebook.com/Sumit.Sachdeva.Dop"><img src="images/a27.jpg"></a>
+               <h6>sumit</h6>
+            </div>
+            <div class="image-box" data-name="vickey">
+                <a href="https://www.facebook.com/profile.php?id=100005572148430"><img src="images/a28.jpg"></a>
+                <h6>vicky</h6>
+            </div>
+            <div class="image-box" data-name="jitendar">
+                <a href="https://www.facebook.com/jitendra.mahata.33"><img src="images/a30.jpg"></a>
+                <h6>jitendar</h6>
+            </div>
+            <div class="image-box" data-name="sagar">
+                <a href="https://www.facebook.com/sagar.m.j.31"><img src="images/a31.jpg"></a>
+                <h6>sagar</h6>
+            </div>
+            <div class="image-box" data-name="naik">
+                <a href="https://www.facebook.com/profile.php?id=100086883334992"><img src="images/a32.jpg"></a>
+                <h6>naik</h6>
+            </div>
+            <div class="image-box" data-name="krishna">
+                <a href="https://www.facebook.com/krishna.sah.1426"><img src="images/a33.jpg"></a>
+                <h6>krishna</h6>
+            </div>
+            <div class="image-box" data-name="suraj">
+                <a href="https://www.facebook.com/suraj.sawansi.10"><img src="images/a34.jpg"></a>
+                <h6>suraj</h6>
+            </div>
+            <div class="image-box" data-name="dilu">
+                <a href="https://www.facebook.com/profile.php?id=100075938145645"><img src="images/a35.jpg"></a>
+                <h6>dilu</h6>
+            </div>
+            <div class="image-box" data-name="shrawan">
+                <a href="https://www.facebook.com/m.r.shrawan.5"><img src="images/a36.jpg"></a>
+                <h6>sharwan</h6>
+            </div>
+            <div class="image-box" data-name="punit">
+                <a href="https://www.facebook.com/punit.kachhap.50"><img src="images/a37.jpg"></a>
+                <h6>punit</h6>
+            </div>
+            <div class="image-box" data-name="samir">
+                <a href="https://www.facebook.com/samir.aind.5074"><img src="images/a38.jpg"></a>
+                <h6>samir</h6>
+            </div>
+            <div class="image-box" data-name="pawan">
+                <a href="https://www.facebook.com/pawan.munda.96"><img src="images/a39.jpg"></a>
+                <h6>pawan</h6>
+            </div>
+            <div class="image-box" data-name="priya">
+                <a href="https://www.facebook.com/profile.php?id=100007377605582"><img src="images/a40.jpg"></a>
+                <h6>priya</h6>
+            </div>
+            <div class="image-box" data-name="sandeep">
+                <a href="https://www.facebook.com/sandeep.bhagat.165"><img src="images/a41.jpg"></a>
+                <h6>sandeep</h6>
+            </div>
+            <div class="image-box" data-name="vicky">
+                <a href="https://www.facebook.com/singervickykachhap"><img src="images/a42.jpg"></a>
+                <h6>vickey</h6>
+            </div>
+            <div class="image-box" data-name="sanjaykumar">
+                <a href="https://www.facebook.com/profile.php?id=100042128150506"><img src="images/a43.jpg"></a>
+                <h6>sanjay</h6>
+            </div>
+            <div class="image-box" data-name="prakash">
+                <a href="https://www.facebook.com/profile.php?id=100085696960169"><img src="images/a44.jpg"></a>
+                <h6>prakash</h6>
+            </div>
+            <div class="image-box" data-name="deepak">
+                <a href="https://www.facebook.com/suraj.oram.3158"><img src="images/a45.jpg"></a>
+                <h6>deepak</h6>
+            </div>
+            <div class="image-box" data-name="sujit">
+                <a href="https://www.facebook.com/SujitKumarMahto07"><img src="images/a46.jpg"></a>
+                <h6>sujit</h6>
+            </div>
+            <div class="image-box" data-name="ritu">
+                <a href=""><img src="images/a47.jpg"></a>
+                <h6>ritu</h6>
+            </div>
+
+            <div class="image-box" data-name="sargam-divya">
+                <a href=""><img src="images/a48.jpg"></a>
+                <h6>sargam-divya</h6>
+            </div>
+            <div class="image-box" data-name="manish">
+                <a href="https://www.facebook.com/manish.barwar.52"><img src="images/a49.jpg"></a>
+                <h6>manish</h6>
+            </div>
+            <div class="image-box" data-name="fulchand">
+                <a href="https://www.facebook.com/fulchand.srmusic"><img src="images/a50.jpg"></a>
+                <h6>fulchand</h6>
+            </div>
+            <div class="image-box" data-name="sahil">
+                <a href="https://www.facebook.com/dksahil.sahil"><img src="images/a51.jpg"></a>
+                <h6>sahil</h6>
+            </div>
+            <div class="image-box" data-name="bidhan">
+                <a href="https://www.facebook.com/bidhan.mahato.102"><img src="images/a52.jpg"></a>
+                <h6>bidhan</h6>
+            </div>
+
+            <div class="image-box" data-name="binay">
+                <a href="https://www.facebook.com/profile.php?id=100081322604335"><img src="images/a53.jpg"></a>
+                <h6>binay</h6>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const search = document.querySelector(".search-box input"),
+      images = document.querySelectorAll(".image-box");
+
+search.addEventListener("keyup", e =>{
+    if(e.key == "Enter"){
+        let searcValue = search.value,
+            value = searcValue.toLowerCase();
+            images.forEach(image =>{
+                if(value === image.dataset.name){ //matching value with getting attribute of images
+                    return image.style.display = "block";
+                }
+                image.style.display = "none";
+         });
+    }
+});
+
+search.addEventListener("keyup", () =>{
+    if(search.value != "") return;
+
+    images.forEach(image =>{
+        image.style.display = "block";
+    })
+})
+    </script>
+</body>
+</html>
